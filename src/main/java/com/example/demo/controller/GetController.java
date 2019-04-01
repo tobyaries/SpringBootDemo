@@ -1,12 +1,9 @@
 package com.example.demo.controller;
 
 import java.util.*;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.*;
+import com.example.demo.bean.User;
 
 @RestController
 public class GetController {
@@ -31,6 +28,49 @@ public class GetController {
 		params.clear();
 		params.put("from", from);
 		params.put("size", size);
+		return params;
+	}
+	/***
+	 * 功能描述： 测试defalut value
+	 */
+	@GetMapping(value="/v2/page_user1")
+	public Object pageUserV2(@RequestParam(defaultValue = "0", name="page") int from, int size) {
+		params.clear();
+		params.put("from", from);
+		params.put("size", size);
+		return params;
+	}
+	/***
+	 * 功能描述： 测试java bean
+	 * 指定http头为 content-type为application/json
+	 * 使用body传输数据
+	 */
+	@GetMapping(value="/v1/save_user")
+	public Object saveUser(@RequestBody User user) {
+		params.clear();
+		params.put("user", user);
+		return params;
+	}
+	/***
+	 * 功能描述： 测试获取http头信息
+	 * accessToken
+	 */
+	@GetMapping(value="/v1/get_header")
+	public Object getHeader(@RequestHeader("access_token") String accessToken, String id ) {
+		params.clear();
+		params.put("access_token", accessToken);
+		params.put("id", id);
+		return params;
+	}
+	/***
+	 * 功能描述： 测试获取servlet request
+	 * accessToken
+	 */
+	@GetMapping(value="/v1/test_request")
+	public Object testRequest(HttpServletRequest request ) {
+		params.clear();
+		String id = request.getParameter("id");
+		params.put("id", id);
 		return params;
 	}
 }
