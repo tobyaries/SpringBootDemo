@@ -9,6 +9,7 @@ import com.example.demo.bean.User;
 public class GetController {
 	
 	private Map<String, Object> params = new HashMap<String, Object>();
+
 	/**
 	 * 功能描述： 测试restful
 	 * @return
