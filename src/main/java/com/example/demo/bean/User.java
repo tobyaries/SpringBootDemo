@@ -2,15 +2,21 @@ package com.example.demo.bean;
 
 import java.util.Date;
 import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User {
 
 	private int age;
 
+	@JsonIgnore
 	private String pwd;
 
+	@JsonProperty("account")
 	private String phone;
 
+	@JsonFormat(pattern="yyyy-MM-dd hh:mm:ss", locale = "zh", timezone = "GMT+8")
 	private Date createTime;
 
 
