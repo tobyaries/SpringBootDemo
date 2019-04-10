@@ -30,11 +30,11 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 			<scope>test</scope>
-		</dependency>
+		</dependency> -->
 		
 		<!-- 热启动，热部署依赖包 -->
 		<dependency>
