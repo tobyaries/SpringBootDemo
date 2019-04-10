@@ -18,7 +18,14 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 public class SampleController {
 
-	private static final String filePath = "E:\\workspace\\SpringBoot\\imges\\";
+	private final String filePath = getCurrentPath() + "\\src\\main\\resources\\static\\images\\";
+
+	private String getCurrentPath() {
+		String classUrl = this.getClass().getResource("/").getPath();
+		File file = new File(classUrl);
+		String projectUrl = file.getParentFile().getParentFile().getPath();
+		return projectUrl;
+	}
 
 	@RequestMapping("/")
 	public String index() {
@@ -55,6 +62,8 @@ public class SampleController {
 		// 文件上传后的路径
 		fileName = UUID.randomUUID() + suffixName;
 		File dest = new File(filePath + fileName);
+
+		System.out.println(getCurrentPath());
 		try {
 			file.transferTo(dest);
 			return new JsonData(0, fileName);
