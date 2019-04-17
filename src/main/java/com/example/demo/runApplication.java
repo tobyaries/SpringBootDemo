@@ -20,7 +20,7 @@ public class runApplication {
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
         //单个文件最大
-        factory.setMaxFileSize("1KB");
+        factory.setMaxFileSize("100KB");
         //设置上传数据总大小
         factory.setMaxRequestSize("1024000KB");
         return factory.createMultipartConfig();
