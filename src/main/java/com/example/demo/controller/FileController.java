@@ -7,7 +7,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
 import com.example.demo.bean.JsonData;
-
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,7 +16,8 @@ import org.springframework.web.multipart.MultipartFile;
 @PropertySource({"classpath:application.properties"})
 public class FileController {
 
-  private final String filePath = getCurrentPath() + "\\src\\main\\resources\\static\\images\\";
+  @Value("${web.file.imagPath}")
+  private String imagePath;
 
   private String getCurrentPath() {
     String classUrl = this.getClass().getResource("/").getPath();
@@ -37,6 +38,8 @@ public class FileController {
     String name = request.getParameter("name");
     System.out.println("用户名" + name);
 
+    String filePath = getCurrentPath() + imagePath; 
+
     // 获取文件名
     String fileName = file.getOriginalFilename();
     System.out.println("上传的文件名为：" + fileName);
@@ -49,7 +52,7 @@ public class FileController {
     fileName = UUID.randomUUID() + suffixName;
     File dest = new File(filePath + fileName);
 
-    System.out.println(getCurrentPath());
+    System.out.println(filePath);
     try {
       file.transferTo(dest);
       return new JsonData(0, fileName);
