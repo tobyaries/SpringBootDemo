@@ -2,7 +2,11 @@ package com.example.demo.controller;
 
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import com.example.demo.bean.ServerSetting;
 import com.example.demo.bean.User;
 
 @RestController
@@ -73,5 +77,12 @@ public class GetController {
 		String id = request.getParameter("id");
 		params.put("id", id);
 		return params;
+	}
+
+	@Autowired
+	private ServerSetting serverSettings;
+	@GetMapping(value="/v1/test_properties")
+	public Object testProperty(HttpServletRequest request ) {
+		return serverSettings;
 	}
 }

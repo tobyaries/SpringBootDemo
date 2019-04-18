@@ -10,14 +10,14 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @PropertySource({"classpath:application.properties"})
-@ConfigurationProperties()
-public class ServerSetting {
+@ConfigurationProperties(prefix="test")
 
+public class ServerSetting {
     //名称
-    @Value("${test.name}")
+    // @Value("${name}")
     private String name;
     //域名
-    @Value("${test.domain}")
+    // @Value("${domain}")
     private String domain;
 
     public ServerSetting() {
