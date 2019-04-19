@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Bean;
  * runApplication
  */
 @SpringBootApplication
-public class runApplication {
+public class RunApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(runApplication.class, args);
+        SpringApplication.run(RunApplication.class, args);
     }
 
     @Bean

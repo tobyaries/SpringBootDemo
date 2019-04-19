@@ -1,0 +1,19 @@
+package com.example.demo.controller;
+
+import java.util.Date;
+import com.example.demo.bean.User;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/***
+ * 功能描述：异常测试
+ */
+@RestController
+public class ExceptionController {
+	@RequestMapping("/api/v1/test_ext")
+	public Object index() {
+
+		int i = 11/0;
+		return new User(11, "sasasa", "100000", new Date());
+	}
+}

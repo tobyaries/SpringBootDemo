@@ -23,6 +23,7 @@ public class User {
 	public User() {
 	}
 
+	
 	public User(int age, String pwd, String phone, java.util.Date date) {
 		this.age = age;
 		this.pwd = pwd;
