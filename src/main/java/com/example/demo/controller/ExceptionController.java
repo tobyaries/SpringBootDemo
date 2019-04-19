@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.Date;
+import com.example.demo.bean.MyException;
 import com.example.demo.bean.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,8 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExceptionController {
 	@RequestMapping("/api/v1/test_ext")
 	public Object index() {
-
 		int i = 11/0;
 		return new User(11, "sasasa", "100000", new Date());
+	}
+
+	@RequestMapping("/api/v1/myext")
+	public Object myexc() {
+		throw new MyException("500", "my ext异常");
 	}
 }
