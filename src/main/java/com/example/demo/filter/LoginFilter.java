@@ -29,11 +29,12 @@ public class LoginFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
         String userName = req.getParameter("username");
-        if ("yestin".equals(userName)) {
-            chain.doFilter(req, resp);
-        } else {
-            return ;
-        }
+        chain.doFilter(req, resp);
+        // if ("yestin".equals(userName)) {
+        //     chain.doFilter(req, resp);
+        // } else {
+        //     return ;
+        // }
     }
 
     @Override
