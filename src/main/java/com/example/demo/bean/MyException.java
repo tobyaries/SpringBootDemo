@@ -2,14 +2,14 @@ package com.example.demo.bean;
 
 import java.util.Objects;
 
-import org.springframework.web.bind.annotation.RestController;
-
 /**
  * MyException
  * 自定义异常类
  */
 public class MyException extends RuntimeException{
     
+    private static final long serialVersionUID = 4515222414423619113L;
+
     private String code;
 
     private String msg;

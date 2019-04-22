@@ -47,7 +47,7 @@
 
 	<build>
 		<!--打包的项目名称-->
-		<fileName>firstwar_spring</fileName>
+		<finalName>firstwar</finalName>
 		<plugins>
 			<!-- 热启动，热部署依赖插件 -->
 			<plugin>

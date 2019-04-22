@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExceptionController {
 	@RequestMapping("/api/v1/test_ext")
 	public Object index() {
-		int i = 11/0;
+		// int i = 11/0;
 		return new User(11, "sasasa", "100000", new Date());
 	}
 
