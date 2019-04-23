@@ -78,6 +78,16 @@ public class GetController {
 		params.put("id", id);
 		return params;
 	}
+	/***
+	 * 功能描述：
+	 * 
+	 */
+	@GetMapping(value="/api2/v1/account")
+	public Object account() {
+		System.out.println(" controller ---> account ");
+		params.put("money", "1000");
+		return params;
+	}
 
 	@Autowired
 	private ServerSetting serverSettings;
