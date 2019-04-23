@@ -22,6 +22,4 @@ public class UserServlet extends HttpServlet {
         resp.getWriter().flush();
         resp.getWriter().close();
     }
-
-    
 }

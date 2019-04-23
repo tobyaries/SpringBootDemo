@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * LoginFilter
  */
-@WebFilter(urlPatterns = "/v1/*", filterName = "loginFilter")
+// @WebFilter(urlPatterns = "/v1/*", filterName = "loginFilter")
 public class LoginFilter implements Filter {
 
     @Override
