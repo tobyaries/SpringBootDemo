@@ -1,92 +1,96 @@
 package com.example.demo.bean;
 
 import java.io.Serializable;
-import java.util.Objects;
 
+/**
+ * 功能描述：响应结果类
+ */
 public class JsonData implements Serializable {
 
-    private static final long serialVersionUID = 6171340881451879529L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    // 状态: 0-成果 -1-失败
-    private int code;
+	private Integer code; // 状态码 0 表示成功，1表示处理中，-1表示失败
+	private Object data; // 数据
+	private String msg;// 描述
 
-    // 结果
-    private Object data;
+	public JsonData() {
+	}
 
-    private String errMsg;
-
-    public JsonData() {
+	public JsonData(Integer code, Object data, String msg) {
+		this.code = code;
+		this.data = data;
+		this.msg = msg;
     }
+    
 
-    /**
-     * @return the errMsg
-     */
-    public String getErrMsg() {
-        return errMsg;
-    }
-
-    /**
-     * @param errMsg the errMsg to set
-     */
-    public void setErrMsg(String errMsg) {
-        this.errMsg = errMsg;
-    }
-
-    public JsonData(int code, String errMsg) {
-        this.code = code;
-        this.errMsg = errMsg;
-    }
-
-    public JsonData(int code, Object data) {
+    public JsonData(Integer code, Object data) {
         this.code = code;
         this.data = data;
     }
+    
+    
 
-    public int getCode() {
-        return this.code;
-    }
+	// 成功，传入数据
+	public static JsonData buildSuccess() {
+		return new JsonData(0, null, null);
+	}
 
-    public void setCode(int code) {
-        this.code = code;
-    }
+	// 成功，传入数据
+	public static JsonData buildSuccess(Object data) {
+		return new JsonData(0, data, null);
+	}
 
-    public Object getData() {
-        return this.data;
-    }
+	// 失败，传入描述信息
+	public static JsonData buildError(String msg) {
+		return new JsonData(-1, null, msg);
+	}
 
-    public void setData(Object data) {
-        this.data = data;
-    }
+	// 失败，传入描述信息,状态码
+	public static JsonData buildError(String msg, Integer code) {
+		return new JsonData(code, null, msg);
+	}
 
-    public JsonData code(int code) {
-        this.code = code;
-        return this;
-    }
+	// 成功，传入数据,及描述信息
+	public static JsonData buildSuccess(Object data, String msg) {
+		return new JsonData(0, data, msg);
+	}
 
-    public JsonData data(Object data) {
-        this.data = data;
-        return this;
-    }
+	// 成功，传入数据,及状态码
+	public static JsonData buildSuccess(Object data, int code) {
+		return new JsonData(code, data, null);
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof JsonData)) {
-            return false;
-        }
-        JsonData jsonData = (JsonData) o;
-        return code == jsonData.code && Objects.equals(data, jsonData.data);
-    }
+	public Integer getCode() {
+		return code;
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(code, data);
-    }
+	public void setCode(Integer code) {
+		this.code = code;
+	}
 
-    @Override
-    public String toString() {
-        return "{" + " code='" + getCode() + "'" + ", data='" + getData() + "'" + "}";
-    }
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	@Override
+	public String toString() {
+		return "JsonData [code=" + code + ", data=" + data + ", msg=" + msg
+				+ "]";
+	}
 
 }

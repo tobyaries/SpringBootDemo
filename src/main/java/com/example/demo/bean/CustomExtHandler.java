@@ -13,25 +13,25 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * CustomExtHandler
  */
-@RestControllerAdvice
+// @RestControllerAdvice
 public class CustomExtHandler {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CustomExtHandler.class);
+    // private static final Logger LOG = LoggerFactory.getLogger(CustomExtHandler.class);
 
-    @ExceptionHandler(value = MyException.class)
-    Object handleException(Exception e) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("error.html");
-        modelAndView.addObject("msg", e.getMessage());
-        return modelAndView;
-    }
-    @ExceptionHandler(value = Exception.class)
-    Object handleException(Exception e, HttpServletRequest request) {
-        LOG.error("url {}, msg {}", request.getRequestURL(), e.getMessage());
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("code", 100);
-        map.put("msg", e.getMessage());
-        map.put("url", request.getRequestURL());
-        return map;
-    }
+    // @ExceptionHandler(value = MyException.class)
+    // Object handleException(Exception e) {
+    //     ModelAndView modelAndView = new ModelAndView();
+    //     // modelAndView.setViewName("error.html");
+    //     modelAndView.addObject("msg", e.getMessage());
+    //     return modelAndView;
+    // }
+    // // @ExceptionHandler(value = Exception.class)
+    // Object handleException(Exception e, HttpServletRequest request) {
+    //     LOG.error("url {}, msg {}", request.getRequestURL(), e.getMessage());
+    //     Map<String, Object> map = new HashMap<String, Object>();
+    //     map.put("code", 100);
+    //     map.put("msg", e.getMessage());
+    //     map.put("url", request.getRequestURL());
+    //     return map;
+    // }
 }

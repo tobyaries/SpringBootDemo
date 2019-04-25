@@ -3,7 +3,9 @@ package com.example.demo.controller;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import com.example.demo.bean.User;
+
+import com.example.demo.bean.Person;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +26,6 @@ public class SampleController {
 
 	@RequestMapping("/testjson")
 	public Object testjson() {
-		return new User(111, "abc123", "18572231222", new Date());
+		return new Person(111, "abc123", "18572231222", new Date());
 	}
 }

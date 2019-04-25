@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.bean.Person;
 import com.example.demo.bean.ServerSetting;
-import com.example.demo.bean.User;
 
 @RestController
 public class GetController {
@@ -51,9 +51,9 @@ public class GetController {
 	 * 使用body传输数据
 	 */
 	@GetMapping(value="/v1/save_user")
-	public Object saveUser(@RequestBody User user) {
+	public Object saveUser(@RequestBody Person person) {
 		params.clear();
-		params.put("user", user);
+		params.put("person", person);
 		return params;
 	}
 	/***
