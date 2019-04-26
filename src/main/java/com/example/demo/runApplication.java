@@ -6,19 +6,17 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ApplicationContext;
-// import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
-// import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-// import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.annotation.ComponentScan;
+// import org.springframework.context.annotation.ComponentScan;
 
 /**
  * runApplication
  */
 @SpringBootApplication
-@ComponentScan({"com.example.demo", "com.example.demo.controller.users"})
-// @ServletComponentScan
+// @ComponentScan({"com.example.demo", "com.example.demo.controller.users"})
+@ServletComponentScan
 @MapperScan("com.example.demo.dao")
 public class RunApplication {
 // public class RunApplication extends SpringBootServletInitializer {
