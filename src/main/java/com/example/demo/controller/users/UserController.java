@@ -1,6 +1,7 @@
 package com.example.demo.controller.users;
 
 import java.util.Date;
+import java.util.List;
 import com.example.demo.bean.JsonData;
 import com.example.demo.bean.User;
 import com.example.demo.service.UserService;
@@ -31,5 +32,14 @@ public class UserController {
         user.setPhone("17717322222");
         int id = userService.add(user);
         return JsonData.buildSuccess(id);
+    }
+
+    /**
+     * user 查询接口
+     */
+    @GetMapping("getAll")
+    public Object getAll() {
+        List<User> list = userService.getAll();
+        return JsonData.buildSuccess(list);
     }
 }

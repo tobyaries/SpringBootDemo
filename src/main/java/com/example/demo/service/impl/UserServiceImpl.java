@@ -1,5 +1,7 @@
 package com.example.demo.service.impl;
 
+import java.util.List;
+
 import com.example.demo.bean.User;
 import com.example.demo.dao.UserDAO;
 import com.example.demo.service.UserService;
@@ -20,5 +22,26 @@ public class UserServiceImpl implements UserService {
         userDAO.insert(user);
         int id = user.getId();
         return id;
+    }
+
+    @Override
+    public List<User> getAll() {
+        List<User> list = userDAO.getAll();
+        return list;
+    }
+
+    @Override
+    public User findById(Long userId) {
+        return null;
+    }
+
+    @Override
+    public void update(User user) {
+
+    }
+
+    @Override
+    public void delete(Long userId) {
+
     }
 }
