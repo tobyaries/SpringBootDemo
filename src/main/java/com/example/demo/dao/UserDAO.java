@@ -20,7 +20,6 @@ public interface UserDAO {
     @Options(useGeneratedKeys=true, keyProperty="id", keyColumn ="id")
     int insert(User user);
 
-
     @Select("SELECT * FROM USER")
     @Results({
         @Result(column = "create_time", property = "createTime")
@@ -43,5 +42,5 @@ public interface UserDAO {
     @Results({
         @Result(column = "create_time", property = "createTime")
     })
-    void updateById(Long id, String name);
+    User updateById(Long id, String name);
 }
