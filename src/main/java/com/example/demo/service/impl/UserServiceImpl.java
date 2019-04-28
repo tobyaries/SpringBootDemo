@@ -31,8 +31,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findById(Long userId) {
-        return null;
+    public User findById(Long id) {
+        User user = userDAO.findById(id);
+        return user;
     }
 
     @Override

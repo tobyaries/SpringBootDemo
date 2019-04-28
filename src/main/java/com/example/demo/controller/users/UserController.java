@@ -42,4 +42,13 @@ public class UserController {
         List<User> list = userService.getAll();
         return JsonData.buildSuccess(list);
     }
+
+     /**
+     * user 指定查询接口
+     */
+    @GetMapping("findById")
+    public Object findById(Long id) {
+        User user = userService.findById(id);
+        return JsonData.buildSuccess(user);
+    }
 }

@@ -23,4 +23,10 @@ public interface UserDAO {
         @Result(column = "create_time", property = "createTime")
     })
     List<User> getAll();
+
+    @Select("SELECT * FROM user WHERE id = #{id}")
+    @Results({
+        @Result(column = "create_time", property = "createTime")
+    })
+    User findById(long id);
 }
