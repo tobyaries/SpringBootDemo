@@ -52,12 +52,21 @@ public class UserController {
         return JsonData.buildSuccess(user);
     }
 
-      /**
+    /**
      * user 删除指定用户
      */
     @GetMapping("deleteById")
     public Object deleteById(Long id) {
         userService.deleteById(id);
+        return JsonData.buildSuccess();
+    }
+
+    /**
+     * user 更新指定用户
+     */
+    @GetMapping("updateById")
+    public Object updateById(Long id, String name) {
+        userService.updateById(id, name);
         return JsonData.buildSuccess();
     }
 }

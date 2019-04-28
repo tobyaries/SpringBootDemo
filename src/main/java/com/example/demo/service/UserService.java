@@ -14,8 +14,8 @@ public interface UserService {
     public List<User> getAll();
 
     public User findById(Long userId);
-
-    public void update(User user);
-
+    
     public void deleteById(Long userId);
+
+    public void updateById(Long id, String name);
 }

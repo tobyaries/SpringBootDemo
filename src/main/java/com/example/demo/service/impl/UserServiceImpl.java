@@ -1,7 +1,6 @@
 package com.example.demo.service.impl;
 
 import java.util.List;
-
 import com.example.demo.bean.User;
 import com.example.demo.dao.UserDAO;
 import com.example.demo.service.UserService;
@@ -37,14 +36,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void update(User user) {
-
-    }
-
-    @Override
     public void deleteById(Long id) {
         userDAO.deleteById(id);
     }
 
-    
+    @Override
+    public void updateById(Long id, String name) {
+        userDAO.updateById(id, name);
+    }
 }
