@@ -29,4 +29,10 @@ public interface UserDAO {
         @Result(column = "create_time", property = "createTime")
     })
     User findById(long id);
+
+    @Select("DELETE FROM user WHERE id = #{id}")
+    @Results({
+        @Result(column = "create_time", property = "createTime")
+    })
+    User deleteById(long id);
 }

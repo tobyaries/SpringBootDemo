@@ -44,11 +44,20 @@ public class UserController {
     }
 
      /**
-     * user 指定查询接口
+     * user 查询指定用户
      */
     @GetMapping("findById")
     public Object findById(Long id) {
         User user = userService.findById(id);
         return JsonData.buildSuccess(user);
+    }
+
+      /**
+     * user 删除指定用户
+     */
+    @GetMapping("deleteById")
+    public Object deleteById(Long id) {
+        userService.deleteById(id);
+        return JsonData.buildSuccess();
     }
 }
