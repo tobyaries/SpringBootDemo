@@ -69,4 +69,13 @@ public class UserController {
         userService.updateById(id, name);
         return JsonData.buildSuccess();
     }
+
+    /**
+     * 测试事务
+     */
+    @GetMapping("add_accout")
+    public Object addAccount() {
+        int id = userService.addAccount();
+        return JsonData.buildSuccess(id);
+    }
 }

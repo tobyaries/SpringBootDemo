@@ -18,4 +18,10 @@ public interface UserService {
     public void deleteById(Long userId);
 
     public void updateById(Long id, String name);
+
+    /**
+     * 测试事务
+     * @return
+     */
+    public int addAccount();
 }

@@ -1,11 +1,14 @@
 package com.example.demo.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import com.example.demo.bean.User;
 import com.example.demo.dao.UserDAO;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * UserServiceImpl
@@ -43,5 +46,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updateById(Long id, String name) {
         userDAO.updateById(id, name);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public int addAccount() {
+        User user = new User();
+        user.setName("alan");
+        user.setAge(88);
+        user.setCreateTime(new Date());
+        user.setPhone("18976253322");
+        userDAO.insert(user);
+        int i = 19/0;
+        return 0;
     }
 }
