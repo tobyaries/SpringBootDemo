@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
         user.setCreateTime(new Date());
         user.setPhone("18976253322");
         userDAO.insert(user);
-        int i = 19/0;
+        // int i = 19/0;
         return 0;
     }
 }

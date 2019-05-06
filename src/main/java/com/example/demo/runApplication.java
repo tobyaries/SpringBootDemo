@@ -1,13 +1,12 @@
 package com.example.demo;
 
 import javax.servlet.MultipartConfigElement;
-
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.context.ApplicationContext;
+// import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 // import org.springframework.context.annotation.ComponentScan;
 
@@ -27,7 +26,8 @@ public class RunApplication {
     // }
 
     public static void main(String[] args) {
-        ApplicationContext  applicationContext = SpringApplication.run(RunApplication.class, args);
+        SpringApplication.run(RunApplication.class, args);
+        // ApplicationContext  applicationContext = SpringApplication.run(RunApplication.class, args);
         // for(String name: applicationContext.getBeanDefinitionNames()) {
         //     System.out.println(name);
         // }
