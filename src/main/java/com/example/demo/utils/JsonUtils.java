@@ -22,6 +22,7 @@ public class JsonUtils {
     }
     
     //字符串转对象
+    @SuppressWarnings("unchecked")
     public static <T> T string2Obj(String str,Class<T> clazz){
         if (StringUtils.isEmpty(str) || clazz == null){
             return null;
