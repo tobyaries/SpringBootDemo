@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonUtils {
 
+    //objectMapper属于jackson里的工具
     private static ObjectMapper objectMapper = new ObjectMapper();
     
     //对象转字符串
