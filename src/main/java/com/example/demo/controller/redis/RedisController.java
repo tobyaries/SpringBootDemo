@@ -43,8 +43,8 @@ public class RedisController {
 
     @GetMapping(value = "get_user")
     public Object getUser() {
-        redis.get("base:user:111");
-        return JsonData.buildSuccess("OK");
+        String str = redis.get("base:user:111");
+        return JsonData.buildSuccess(JsonUtils.string2Obj(str, User.class));
     }
 
     @GetMapping(value = "get")
