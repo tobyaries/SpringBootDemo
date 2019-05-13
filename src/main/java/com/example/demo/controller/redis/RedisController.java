@@ -6,7 +6,6 @@ import com.example.demo.bean.JsonData;
 import com.example.demo.bean.User;
 import com.example.demo.utils.JsonUtils;
 import com.example.demo.utils.RedisClient;
-
 import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;

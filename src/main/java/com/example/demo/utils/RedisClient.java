@@ -18,7 +18,6 @@ public class RedisClient {
             redisTpl.opsForValue().set(key, value);
             return true;
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
             return false;
         }
