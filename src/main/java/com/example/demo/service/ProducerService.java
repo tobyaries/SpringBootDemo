@@ -21,4 +21,6 @@ public interface ProducerService {
      * @param message
      */
     public void sendMessage(final String message);
+
+    public void publish(String msg);
 }
